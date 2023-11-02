@@ -95,6 +95,12 @@ jobs:
     # Run this job after both build and release completes successfully
     needs: [build, release]
 
+    environment:
+      name: pypi
+      url: https://pypi.org/p/pdf2docx-headless
+    permissions:
+      id-token: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
