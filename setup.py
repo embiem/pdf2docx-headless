@@ -45,7 +45,7 @@ def load_requirements(fname):
     return requirements
 
 setup(
-    name="pdf2docx",    
+    name="pdf2docx-headless",    
     version=get_version("version.txt"),
     keywords=["pdf-to-word", "pdf-to-docx"],
     description=DESCRIPTION,
