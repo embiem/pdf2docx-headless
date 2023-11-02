@@ -3,22 +3,20 @@
 name: publish
 
 # Trigger the workflow on push tags, matching vM.n.p, i.e. v3.2.10
-on:  
+on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 # Jobs to do:
 # - build package
 # - create release with asset
 # - publish to Pypi
 jobs:
-
   # -----------------------------------------------------------
   # create python env and setup package
   # -----------------------------------------------------------
   build:
-
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -30,7 +28,7 @@ jobs:
       - name: Set up Python 3.x
         uses: actions/setup-python@v1
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
@@ -61,9 +59,9 @@ jobs:
       - name: Archive package
         uses: actions/upload-artifact@v2
         with:
-            name: dist
-            path: ./dist
-  
+          name: dist
+          path: ./dist
+
   # -----------------------------------------------------------
   # create release and upload asset
   # -----------------------------------------------------------
@@ -95,7 +93,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
   # -----------------------------------------------------------
   # publish to Pypi
   # -----------------------------------------------------------
@@ -122,6 +119,4 @@ jobs:
         run: rm ./dist/*.zip
 
       - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@master
-        with:
-          password: ${{ secrets.PYPI_PASSWORD }}
+        uses: pypa/gh-action-pypi-publish@release/v1
