@@ -1,16 +1,22 @@
 English | [中文](README_CN.md)
 
-# pdf2docx 
+# pdf2docx-headless 
 
 ![python-version](https://img.shields.io/badge/python->=3.6-green.svg)
-[![codecov](https://codecov.io/gh/dothinking/pdf2docx/branch/master/graph/badge.svg)](https://codecov.io/gh/dothinking/pdf2docx)
-[![pypi-version](https://img.shields.io/pypi/v/pdf2docx.svg)](https://pypi.python.org/pypi/pdf2docx/)
+[![pypi-version](https://img.shields.io/pypi/v/pdf2docx-headless.svg)](https://pypi.python.org/pypi/pdf2docx/)
 ![license](https://img.shields.io/pypi/l/pdf2docx.svg)
-![pypi-downloads](https://img.shields.io/pypi/dm/pdf2docx)
+![pypi-downloads](https://img.shields.io/pypi/dm/pdf2docx-headless)
 
 - Extract data from PDF with `PyMuPDF`, e.g. text, images and drawings 
 - Parse layout with rule, e.g. sections, paragraphs, images and tables
 - Generate docx with `python-docx`
+
+## Difference to original pdf2docx
+
+**Important**: This package is a fork of the original package, using `opencv-python-headless` as dependency instead of `opencv-python` to remove any gui dependencies.
+
+[Reference issue](https://github.com/opencv/opencv-python/issues/370)
+
 
 ## Features
 
